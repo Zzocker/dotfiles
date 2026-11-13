@@ -1,3 +1,9 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input must go above this block.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -8,7 +14,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,7 +76,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker node golang npm yarn rust nvm terraform)
+plugins=(git docker node golang npm yarn rust nvm terraform zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,17 +109,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export DEFAULT_USER=$USER
-prompt_dir() {
-  prompt_segment blue black "$(basename "$PWD")"
-}
-build_prompt() {
-  RETVAL=$?
-  prompt_status
-  prompt_dir
-  prompt_git
-  prompt_end
-}
-
 # Machine-local tool setup, secrets and private aliases (not tracked in dotfiles)
 [ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
+
+# Powerlevel10k prompt config. Run `p10k configure` to regenerate.
+[[ -f "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"

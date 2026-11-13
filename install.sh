@@ -24,6 +24,26 @@ link() {
     echo "link    $dst -> $src"
 }
 
+clone() {
+    local url="$1" dst="$2"
+    if [ -d "$dst" ]; then
+        echo "ok      $dst"
+    else
+        git clone -q --depth=1 "$url" "$dst"
+        echo "clone   $dst"
+    fi
+}
+
+# oh-my-zsh theme and plugins used by home/.zshrc (oh-my-zsh itself must already be installed)
+zsh_custom="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+if [ -d "$HOME/.oh-my-zsh" ]; then
+    clone https://github.com/romkatv/powerlevel10k.git          "$zsh_custom/themes/powerlevel10k"
+    clone https://github.com/zsh-users/zsh-autosuggestions      "$zsh_custom/plugins/zsh-autosuggestions"
+    clone https://github.com/zsh-users/zsh-syntax-highlighting  "$zsh_custom/plugins/zsh-syntax-highlighting"
+else
+    echo "skip    oh-my-zsh not installed; install it first for the zsh theme/plugins"
+fi
+
 cd "$repo"
 find . -type f -not -path './.git/*' -not -name install.sh -not -name 'README*' -not -name .gitignore -printf '%P\n' |
 while read -r rel; do
