@@ -1,6 +1,49 @@
 {
-    "workbench.colorTheme": "Winter is Coming (Dark Blue - No Italics)",
-    "workbench.iconTheme": "material-icon-theme",
-    "terminal.integrated.initialHint": false,
-    "chat.disableAIFeatures": true
+  "workbench.colorTheme": "Winter is Coming (Dark Blue - No Italics)",
+  "files.autoSave": "afterDelay",
+  "terminal.integrated.initialHint": false,
+  "chat.agent.enabled": false,
+  "chat.disableAIFeatures": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "explorer.confirmDelete": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "editor.codeActions.triggerOnFocusChange": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "go.toolsManagement.autoUpdate": true,
+  "githubPullRequests.pullBranch": "never",
+  "claudeCode.preferredLocation": "panel",
+  "cSpell.userWords": [
+    "truenroll"
+  ],
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "hediet.vscode-drawio.resizeImages": null,
+  "hediet.vscode-drawio.codeLinkActivated": false,
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://opencode.ai/config.json": true,
+    "https://models.dev": true,
+    "https://opencode.ai": true,
+    "https://turbo.build": true,
+    "https://unpkg.com/knip/schema.json": true
+  },
+  "githubPullRequests.terminalLinksHandler": "github",
+  "explorer.confirmPasteNative": false,
+  "claudeCode.hideOnboarding": true
 }
